@@ -1,7 +1,9 @@
 #pragma once
 
+#include <iostream>
 #include <string>
-
+#include <vector>
+#include "Module.h"
 class Module
 {
 private:
@@ -12,6 +14,7 @@ private:
 public:
 	Module();
 	Module(std::string moduleTitle, std::string moduleCode, int moduleCreditPoints, int moduleMark);
+	~Module();
 
 	std::string getModuleTitle() const;
 	void setModuleTitle(std::string);

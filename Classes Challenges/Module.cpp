@@ -7,6 +7,20 @@ Module::Module()
 Module::Module(std::string moduleTitle, std::string moduleCode, int moduleCreditPoints, int moduleMark) :
 	moduleTitle_{ moduleTitle }, moduleCode_{ moduleCode }, moduleCreditPoints_{ moduleCreditPoints }, moduleMark_{ moduleMark } {}
 
+
+Module::~Module()
+{
+	if (moduleTitle_.size() <= 0)
+	{
+		std::cout << "Destructor of the moduke class called on module " << this->moduleTitle_ << std::endl;
+	}
+	else
+	{
+		std::cout << "Destructor of the module class called on module " << this->moduleTitle_ << std::endl;
+
+	}
+
+}
 std::string Module::getModuleTitle() const{
 	return moduleTitle_;
 }

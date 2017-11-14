@@ -14,13 +14,25 @@
 //Note how we use the scope resolution operator ::
 //We do that to specify which class the member functions belong to
 //Class_Name::Member_Function
-Student::Student() {
-	std::cout << "The default Student class constructor was called" << std::endl;
+Student::Student() 
+{
 }
 
 Student::Student(std::string name) {
-	std::cout << "The first custom Student class constructor was called" << std::endl;
+	std::cout << "The first custom Student class constructor was called for " << this->name_ << std::endl;
 	name_ = name;
+}
+
+Student::~Student()
+{ 
+	if ((name_.size()) <= 0)
+	{
+		std::cout << "The desturcotr Student class was called for " << this->name_ << std::endl;
+	}
+	else
+	{
+		std::cout << "The destructor for Student class was called for empty student class" << std::endl;
+	}
 }
 
 //This constructor creates and initialises it by copying the data from each variable
@@ -29,7 +41,7 @@ Student::Student(std::string name) {
 Student::Student(std::string name, std::string registration, std::string course, int yearofStudy) : name_{ name }, registrstionID_{ registration }, course_{ course},
 	yearofStudy_{ yearofStudy}
 {
-	std::cout << "The second custom Student class constructor was called" << std::endl;
+	std::cout << "The second custom Student class constructor was called for " << this->name_ << std::endl;
 
 	//we could assign the values of the parameters to the data members like this
 	//name_ = name;

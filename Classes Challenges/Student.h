@@ -44,6 +44,8 @@ public:
 
 	Student(std::string name);
 
+	~Student();
+
 	//Getters and setters for each member variable
 	void SetName(std::string name);
 	std::string GetName() const;
